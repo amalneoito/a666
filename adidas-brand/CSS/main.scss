@@ -1,0 +1,269 @@
+body {
+    margin: 1.5em;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/headadidas.jpg');
+    background-size: cover;
+    background-position-x: 20%;
+    background-position-y: 20%;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    animation: introLoad 2s forwards;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    height: 100vh;
+    width: 50%;
+    z-index: 999;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+     
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8em;
+
+        a {
+            color: black;
+            padding: .75em 2em;
+            display: block;
+
+            &:hover {
+                background: grey;
+            }
+        }
+    }
+
+    .close {
+        float: right;
+        margin: 2rem;
+        width: 2.5rem;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    svg {
+        stroke: white;
+        fill: white;
+        width: 2em;
+        margin-top: -.6em;
+        cursor: pointer;
+    }
+}
+ 
+h1 {
+    font-size: 4rem;
+    margin-top: 2em;
+    line-height: 5rem;
+    color: white;
+}
+
+.subhead {
+    font-size: 2rem;
+}
+
+section.hero {
+    color: white;
+    height: 90vh;
+
+
+    .downarow {
+        stroke: white;
+        position: absolute;
+        bottom: 2em;
+        width: 2rem;
+        fill: white;
+        animation: moveArrow 1s alternate-reverse infinite;
+    }
+}
+ 
+
+.more-info {
+    img {
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        line-height: 1.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 680px) {
+
+    body {
+        margin: 1.5em 5em;
+        font-family: 'Poppins';
+    }
+}
+
+@media only screen and (min-width: 920px) {
+
+    .menu {
+        display: none;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        .close {
+            display: none;
+        }
+        ul {
+            display: flex;
+            margin: 0;
+
+            a {
+                color: white;
+                padding: .5em 1.5em;
+                font-size: 1.25rem;
+
+                &:hover {
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .hero-img {
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 42em;
+    }
+
+    .logo {
+        color: black;
+
+        span {
+            color: rgb(76, 76, 99);
+        }
+    }
+
+    section.hero {
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+        h1 {
+            color: rgb(50, 52, 87);
+        }
+
+        svg.downarow {
+            stroke: black;
+            position: unset;
+
+            path {
+                fill: black;
+            }
+        }
+    }
+
+    .more-info {
+        padding-top: 2rem;
+    }
+
+    .feature {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 5em;
+
+        img {
+            width: 25em;
+        }
+
+        .content {
+            text-align: right;
+            width: 25em;
+        }
+    }
+
+    .feature.left {
+        grid-template-areas: "left right";
+
+        img {
+            grid-area: left;
+        };
+
+        .content {
+            text-align: left;
+            width: 25em;
+        }
+    }
+
+}
+
+
+@keyframes introLoad {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 00 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes moveArrow {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+.copyright {
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.ig {
+    font-size: 3rem;
+    padding-left: 50%;
+}
